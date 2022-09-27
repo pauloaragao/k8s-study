@@ -1,4 +1,4 @@
-# Instelando Kind em seu WSL
+# Instalando Kind em seu WSL2
 
 Documentação de como utilizar o kind no wsl.
 
@@ -20,7 +20,7 @@ https://kind.sigs.k8s.io/docs/user/using-wsl2/#accessing-a-kubernetes-service-ru
 ## Criando Cluster WSL2
 Criando cluster:
 ```
-kind create cluster
+ kind create cluster --config=cluster-config.yml --name=paulo
 ```
 Configurando contexto:
 ```
