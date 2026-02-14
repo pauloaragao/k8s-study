@@ -1,4 +1,11 @@
+# Kubernetes Study Guide
+Esse guia de estudo é destinado a ajudar os iniciantes a aprenderem sobre Kubernetes, um sistema de orquestração de contêineres amplamente utilizado. Ele cobre os conceitos básicos, comandos essenciais e práticas recomendadas para trabalhar com Kubernetes. O guia é dividido em seções, cada uma focando em um aspecto específico do Kubernetes, como instalação, criação de clusters, gerenciamento de recursos e muito mais. Ele inclui exemplos práticos e comandos para facilitar a compreensão e a aplicação dos conceitos aprendidos.
+
+A aplicação foi utilizada uso local com K3D e WSL2, mas os conceitos e comandos apresentados são aplicáveis a qualquer ambiente Kubernetes, seja ele local ou em nuvem. O objetivo é fornecer uma base sólida para que os iniciantes possam começar a trabalhar com Kubernetes e expandir seus conhecimentos à medida que ganham experiência.
+
 # K3D
+
+K3D é uma ferramenta que facilita a criação e gerenciamento de clusters Kubernetes locais usando o K3s, uma distribuição leve do Kubernetes. Ele é especialmente útil para desenvolvedores que desejam testar e desenvolver aplicações em um ambiente Kubernetes sem a necessidade de configurar um cluster completo. O K3D é compatível com o WSL2, permitindo que os usuários do Windows possam criar e gerenciar clusters Kubernetes localmente. Ele oferece uma interface simples para criar, listar e excluir clusters, além de configurar o kubectl para se conectar ao cluster criado.
 
 ## Instalação do K3D no WSL2
 
@@ -27,6 +34,8 @@ export KUBECONFIG=$(k3d kubeconfig write mycluster)
 ```
 
 # Kubectl
+
+Kubectl é a ferramenta de linha de comando para interagir com clusters Kubernetes. Ele permite que os usuários criem, atualizem, excluam e gerenciem recursos do Kubernetes, como pods, serviços, deployments e muito mais. O kubectl é essencial para trabalhar com Kubernetes, pois fornece uma interface para executar comandos e obter informações sobre o estado do cluster e dos recursos. Ele é usado para realizar operações como criar e gerenciar recursos, verificar o status dos pods, escalar deployments, acessar logs e muito mais. O kubectl é uma ferramenta poderosa que permite aos usuários controlar e gerenciar seus clusters Kubernetes de forma eficiente.
 
 ## Acessar o cluster
 
