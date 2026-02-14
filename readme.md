@@ -54,6 +54,13 @@ export KUBECONFIG=$(k3d kubeconfig write mycluster)
 
 Kubectl é a ferramenta de linha de comando para interagir com clusters Kubernetes. Ele permite que os usuários criem, atualizem, excluam e gerenciem recursos do Kubernetes, como pods, serviços, deployments e muito mais. O kubectl é essencial para trabalhar com Kubernetes, pois fornece uma interface para executar comandos e obter informações sobre o estado do cluster e dos recursos. Ele é usado para realizar operações como criar e gerenciar recursos, verificar o status dos pods, escalar deployments, acessar logs e muito mais. O kubectl é uma ferramenta poderosa que permite aos usuários controlar e gerenciar seus clusters Kubernetes de forma eficiente.
 
+
+## Pod Pelado para debug e testes local
+
+```bash
+kubectl run prompt -it --image ubuntu -- /bin/bash 
+```
+
 ## Acessar o cluster
 
 ```bash
@@ -232,3 +239,14 @@ kubectl delete deployment nginx
 kubectl describe deployment
 ```
 
+## Rollout do deployment history
+
+```bash
+kubectl rollout history deploy name_deployment
+```
+
+## Voltar para uma versão anterior do deployment
+
+```bash
+kubectl rollout undo deploy name_deployment
+```
