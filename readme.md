@@ -3,6 +3,23 @@ Esse guia de estudo é destinado a ajudar os iniciantes a aprenderem sobre Kuber
 
 A aplicação foi utilizada uso local com K3D e WSL2, mas os conceitos e comandos apresentados são aplicáveis a qualquer ambiente Kubernetes, seja ele local ou em nuvem. O objetivo é fornecer uma base sólida para que os iniciantes possam começar a trabalhar com Kubernetes e expandir seus conhecimentos à medida que ganham experiência.
 
+
+## Índice
+
+- [K3D](#k3d)
+  - [Instalação do K3D no WSL2](#instalação-do-k3d-no-wsl2)
+  - [Criar um cluster K3D](#criar-um-cluster-k3d)
+  - [Verificar os clusters disponíveis](#verificar-os-clusters-disponíveis)
+  - [Excluir o cluster](#excluir-o-cluster)
+  - [Configurar o kubectl](#configurar-o-kubectl-para-usar-o-cluster-k3d)
+- [Kubectl](#kubectl)
+  - [Acessar o cluster](#acessar-o-cluster)
+  - [Verificar os nós do cluster](#verificar-os-nós-do-cluster)
+  - [Verificar os pods em execução](#verificar-os-pods-em-execução)
+  - [E outros comandos...](#e-outros-comandos)
+- [Replicaset](#replicaset)
+- [Deployment](#deployment)
+
 # K3D
 
 K3D é uma ferramenta que facilita a criação e gerenciamento de clusters Kubernetes locais usando o K3s, uma distribuição leve do Kubernetes. Ele é especialmente útil para desenvolvedores que desejam testar e desenvolver aplicações em um ambiente Kubernetes sem a necessidade de configurar um cluster completo. O K3D é compatível com o WSL2, permitindo que os usuários do Windows possam criar e gerenciar clusters Kubernetes localmente. Ele oferece uma interface simples para criar, listar e excluir clusters, além de configurar o kubectl para se conectar ao cluster criado.
