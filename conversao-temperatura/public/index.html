@@ -142,6 +142,12 @@
       margin-bottom: 10px;
     }
 
+    .result-meta {
+      font-size: 12px;
+      color: #888;
+      margin-top: 8px;
+    }
+
     .result-value {
       font-size: 32px;
       font-weight: bold;
@@ -213,6 +219,7 @@
     <div class="result" id="result">
       <p>Resultado:</p>
       <div class="result-value" id="resultValue"></div>
+      <p class="result-meta" id="resultContainer"></p>
     </div>
 
     <div class="info">
@@ -228,6 +235,7 @@
     const resultDiv = document.getElementById('result');
     const resultValue = document.getElementById('resultValue');
     const errorMessage = document.getElementById('errorMessage');
+    const resultContainer = document.getElementById('resultContainer');
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -254,7 +262,7 @@
         if (data.error) {
           showError(data.error);
         } else {
-          showResult(data.result, toUnit.value);
+          showResult(data.result, toUnit.value, data.containerId);
         }
       } catch (error) {
         showError('Erro na conversão. Tente novamente.');
@@ -262,13 +270,14 @@
       }
     });
 
-    function showResult(value, unit) {
+    function showResult(value, unit, containerId) {
       const unitSymbol = {
         'C': '°C',
         'F': '°F',
         'K': 'K'
       };
       resultValue.textContent = `${value} ${unitSymbol[unit]}`;
+      resultContainer.textContent = containerId ? `Container: ${containerId}` : '';
       resultDiv.classList.add('show');
     }
 

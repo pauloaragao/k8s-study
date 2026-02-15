@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: conversao-temperatura
-        image: pauloaragaodev/conversao-temperatura:v1
+        image: pauloaragaodev/conversao-temperatura:v2
         ports:
           - name: http
             containerPort: 3000

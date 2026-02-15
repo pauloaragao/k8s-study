@@ -1,4 +1,5 @@
 const express = require('express');
+const os = require('os');
 const path = require('path');
 
 const app = express();
@@ -44,9 +45,10 @@ app.post('/api/convert', (req, res) => {
       throw new Error('Invalid units');
     }
 
-    res.json({ 
-      success: true, 
-      result: parseFloat(result.toFixed(2)) 
+    res.json({
+      success: true,
+      result: parseFloat(result.toFixed(2)),
+      containerId: os.hostname()
     });
   } catch (error) {
     res.status(400).json({ error: error.message });
