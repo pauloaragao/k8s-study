@@ -34,6 +34,13 @@ curl -s https://raw.githubusercontent.com/rancher/k3d/main/install.sh | bash
 ```bash
 k3d cluster create mycluster
 ```
+## Cria um cluster K3D com 3 servidores e 3 agentes, expondo a porta 30000 do load balancer para acesso externo
+
+``` bash
+k3d cluster create mycluster --servers 3 --agents 3 -p "30000:30000@loadbalancer"
+```
+
+
 ## Verificar os clusters disponíveis
 
 ```bash
