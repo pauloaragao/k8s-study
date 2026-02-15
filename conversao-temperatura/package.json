@@ -1,0 +1,16 @@
+{
+  "name": "temperature-converter",
+  "version": "1.0.0",
+  "description": "Simple temperature converter application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["temperature", "converter"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
