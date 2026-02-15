@@ -138,6 +138,37 @@ kubectl delete service nginx
 kubectl delete deployment nginx
 ```
 
+## Port-forward para acessar o serviço
+
+```bash
+kubectl port-forward service/nginx 8080:80
+```
+
+## Exec para acessar o pod
+
+```bash
+kubectl exec -it <nome-do-pod> -- /bin/bash
+```
+## Exec com rm para remover o pod após sair do terminal
+
+```bash
+kubectl exec -it --rm <nome-do-pod> -- /bin/bash
+```
+
+## Logs do pod
+
+```bash
+kubectl logs <nome-do-pod>
+```
+
+## Run para criar um pod de teste
+
+```bash
+kubectl run test-pod --image=ubuntu --rm -it -- /bin/bash
+```
+
+
+
 # Replicaset 
 
 Replicaset é um recurso do Kubernetes que garante que um número específico de réplicas de um pod esteja em execução a qualquer momento. Ele é responsável por criar e gerenciar os pods para garantir que o número desejado de réplicas esteja sempre disponível. Ele não é responsável por atualizar os pods, para isso é necessário usar um Deployment.
