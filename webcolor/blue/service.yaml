@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: webcolor-blue
+spec:
+  selector:
+    app: webcolor
+    version: blue
+  ports:
+  - port: 8001
+    targetPort: 80
+    name: http
+    protocol: TCP
+  type: LoadBalancer

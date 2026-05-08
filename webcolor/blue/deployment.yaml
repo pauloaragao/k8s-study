@@ -1,20 +1,21 @@
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: Deployment
 metadata:
-  name: meureplicaset
+  name: webcolor-blue
 spec:
-  replicas: 10
   selector:
     matchLabels:
-      app: web
+      app: webcolor
+      version: blue
   template:
     metadata:
       labels:
-        app: web
+        app: webcolor
+        version: blue
     spec:
       containers:
       - name: web
-        image: kubedevio/web-color:green
+        image: kubedevio/web-color:blue
         ports:
         - name: http
           containerPort: 80

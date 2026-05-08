@@ -17,6 +17,12 @@ ports:
   - port: 30000:30000
     nodeFilters:
       - agent:*
+  - port: 8001:8001
+    nodeFilters:
+      - loadbalancer
+  - port: 8002:8002
+    nodeFilters:
+      - loadbalancer
 options:
   k3d:
     wait: true

@@ -1,20 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: meudeployment
+  name: webcolor-green
 spec:
-  replicas: 5
   selector:
     matchLabels:
-      app: web
+      app: webcolor
+      version: green
   template:
     metadata:
       labels:
-        app: web
+        app: webcolor
+        version: green
     spec:
       containers:
       - name: web
-        image: kubedevio/web-color:blue
+        image: kubedevio/web-color:green
         ports:
         - name: http
           containerPort: 80
