@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubenews
+spec:
+  selector:
+    matchLabels:
+      app: kubenews
+  template:
+    metadata:
+      labels:
+        app: kubenews
+    spec:
+      containers:
+      - name: kubenews
+        image: fabricioveronez/aula-kube-news:v1
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: kubenews-config
+        env:
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: kubenews-secret
+              key: DB_PASSWORD
