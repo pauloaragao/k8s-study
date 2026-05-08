@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: conversao-temperatura
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: conversao-temperatura
@@ -16,23 +16,6 @@ spec:
       - name: conversao-temperatura
         image: pauloaragaodev/conversao-temperatura:v2
         ports:
-          - name: http
-            containerPort: 3000
-            protocol: TCP
-
----
-
-apiVersion: v1
-kind: Service
-metadata:
-  name: conversao-temperatura-service
-spec:
-  selector:
-    app: conversao-temperatura
-  type: NodePort
-  ports:
-    - name: http
-      port: 80
-      targetPort: 3000
-      protocol: TCP
-      nodePort: 30000
+        - name: http
+          containerPort: 3000
+          protocol: TCP
