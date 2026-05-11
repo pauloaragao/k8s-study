@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simulador-chaos
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simulador-chaos
+  template:
+    metadata:
+      labels:
+        app: simulador-chaos
+    spec:
+      containers:
+      - name: simulador-chaos
+        image: kubedevio/simulador-do-caos:v1
+        ports:
+        - containerPort: 3000
