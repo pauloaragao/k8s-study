@@ -1,9 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: app-conversao-temperatura-config
-data:
-  APP_NAME: "Conversão de Temperatura"
-  APP_VERSION: "2.0"
-  APP_DESCRIPTION: "Aplicação para conversão de temperatura entre Celsius e Fahrenheit"
-  APP_AUTHOR: "Paulo Aragao"

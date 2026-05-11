@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-variaveis-ambiente
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-variaveis-ambiente
+  template:
+    metadata:
+      labels:
+        app: app-variaveis-ambiente
+    spec:
+      containers:
+      - name: app-variaveis-ambiente
+        image: pauloaragaodev/app-variaveis-ambiente:v1
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: app-variaveis-ambiente-config
