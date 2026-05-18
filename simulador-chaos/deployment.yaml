@@ -27,4 +27,21 @@ spec:
           successThreshold: 1
           timeoutSeconds: 5
           terminationGracePeriodSeconds: 30
-          
+        readinessProbe:
+          httpGet:
+            port: 3000
+            path: /ready
+            httpHeaders:
+              - name: token
+                value: "123456"
+          initialDelaySeconds: 3
+          periodSeconds: 4
+          failureThreshold: 1
+          successThreshold: 1
+          timeoutSeconds: 10
+        startupProbe:
+          httpGet:
+            port: 3000
+            path: /health
+          failureThreshold: 30 # => 300s = 5min
+          periodSeconds: 10
