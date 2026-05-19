@@ -28,3 +28,8 @@ A probe de startup é um mecanismo de monitoramento em Kubernetes que verifica s
 
 ## Labels e Annotations:
 As labels e annotations são mecanismos de metadados em Kubernetes que permitem adicionar informações adicionais aos recursos do cluster. As labels são pares de chave-valor que podem ser usados para organizar e selecionar recursos com base em critérios específicos, como ambiente, versão ou tipo de aplicativo. As annotations são pares de chave-valor que podem ser usados para armazenar informações adicionais sobre um recurso, como detalhes de configuração ou informações de monitoramento. Ambas as labels e annotations são configuradas na especificação do recurso e podem ser usadas para facilitar a organização, a seleção e a gestão dos recursos em Kubernetes. As labels e annotations são essenciais para garantir a eficiência e a flexibilidade na gestão dos recursos em Kubernetes, permitindo que os usuários adicionem informações adicionais aos recursos e os organizem de acordo com suas necessidades específicas.
+
+
+
+# Namespace
+O namespace é um recurso em Kubernetes que permite organizar e isolar recursos dentro de um cluster. Ele é usado para criar um ambiente lógico separado para diferentes equipes, projetos ou ambientes, permitindo que os recursos sejam gerenciados de forma independente. Os namespaces ajudam a evitar conflitos de nomes entre recursos e permitem que as políticas de acesso sejam aplicadas de forma granular. Cada recurso em Kubernetes pertence a um namespace específico, e os usuários podem criar, listar e gerenciar recursos dentro de um namespace específico. O uso de namespaces é uma prática recomendada para organizar e gerenciar recursos em Kubernetes, especialmente em ambientes compartilhados ou multi-tenant.

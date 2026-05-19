@@ -288,3 +288,5 @@ kubectl rollout history deploy name_deployment
 ```bash
 kubectl rollout undo deploy name_deployment
 ```
+
+
