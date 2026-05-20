@@ -33,3 +33,12 @@ As labels e annotations são mecanismos de metadados em Kubernetes que permitem 
 
 # Namespace
 O namespace é um recurso em Kubernetes que permite organizar e isolar recursos dentro de um cluster. Ele é usado para criar um ambiente lógico separado para diferentes equipes, projetos ou ambientes, permitindo que os recursos sejam gerenciados de forma independente. Os namespaces ajudam a evitar conflitos de nomes entre recursos e permitem que as políticas de acesso sejam aplicadas de forma granular. Cada recurso em Kubernetes pertence a um namespace específico, e os usuários podem criar, listar e gerenciar recursos dentro de um namespace específico. O uso de namespaces é uma prática recomendada para organizar e gerenciar recursos em Kubernetes, especialmente em ambientes compartilhados ou multi-tenant.
+
+
+# QOS (Quality of Service)
+A qualidade de serviço (QoS) em Kubernetes é um mecanismo que classifica os pods com base em suas solicitações e limites de recursos. Existem três classes de QoS: Guaranteed, Burstable e Best Effort. A classe Guaranteed é atribuída a pods que têm solicitações e limites de recursos iguais, garantindo que eles recebam os recursos solicitados. A classe Burstable é atribuda a pods que têm solicitações de recursos, mas limites maiores, permitindo que eles usem recursos adicionais se estiverem disponíveis. A classe Best Effort é atribuída a pods que não têm solicitações ou limites de recursos, o que significa que eles podem ser preemptados por outros pods com QoS mais alto. A QoS é importante para garantir a eficiência e a estabilidade do cluster, permitindo que os recursos sejam alocados de forma adequada e que os pods sejam gerenciados de acordo com suas necessidades de recursos.
+
+
+# Limit Range
+O Limit Range é um recurso em Kubernetes que permite definir limites de recursos para os pods e contêineres dentro de um namespace. Ele é usado para garantir que os recursos sejam alocados de forma adequada e para evitar que um pod ou contêiner consuma recursos excessivos, o que pode afetar a estabilidade do cluster. O Limit Range pode ser configurado para definir limites de CPU, memória e outros recursos, e pode ser aplicado a todos os pods e contêineres dentro do namespace ou a um subconjunto específico. O uso do Limit Range é uma prática recomendada para garantir a eficiência e a estabilidade do cluster, permitindo que os recursos sejam gerenciados de forma adequada e que os pods sejam limitados de acordo com suas necessidades de recursos.
+
