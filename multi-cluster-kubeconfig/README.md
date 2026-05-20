@@ -161,6 +161,37 @@ k3d cluster delete producao
 k3d cluster delete --all
 ```
 
+## Monitoramento com kubectl top
+
+`kubectl top` exibe o consumo de CPU e memória em tempo real. Requer o **Metrics Server** instalado — no k3d/k3s ele já vem habilitado por padrão.
+
+```bash
+# Consumo por node
+kubectl top nodes --context k3d-desenvolvimento
+
+# Consumo por pod (namespace específico)
+kubectl top pods -n kube-system --context k3d-desenvolvimento
+
+# Todos os pods de todos os namespaces
+kubectl top pods --all-namespaces --context k3d-producao
+```
+
+Exemplo de saída:
+
+```
+# kubectl top nodes
+NAME                            CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%
+k3d-desenvolvimento-server-0    85m          4%     512Mi           26%
+k3d-desenvolvimento-agent-0     42m          2%     310Mi           16%
+
+# kubectl top pods -n kube-system
+NAME                           CPU(cores)   MEMORY(bytes)
+coredns-...                    3m           12Mi
+metrics-server-...             4m           15Mi
+```
+
+> **Nota:** se o Metrics Server não estiver pronto logo após criar o cluster, aguarde ~30s e tente novamente.
+
 ## Fluxo completo de estudo
 
 ```bash
