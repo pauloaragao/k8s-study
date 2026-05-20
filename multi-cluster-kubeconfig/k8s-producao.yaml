@@ -14,6 +14,24 @@ ports:
   - port: 8243:443
     nodeFilters:
       - loadbalancer
+  - port: 3200:3000
+    nodeFilters:
+      - loadbalancer
+  - port: 3201:3001
+    nodeFilters:
+      - loadbalancer
+  - port: 3202:3002
+    nodeFilters:
+      - loadbalancer
+  - port: 8201:8001
+    nodeFilters:
+      - loadbalancer
+  - port: 8202:8002
+    nodeFilters:
+      - loadbalancer
+  - port: 30200:30000
+    nodeFilters:
+      - agent:*
 options:
   k3d:
     wait: true

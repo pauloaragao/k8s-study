@@ -55,11 +55,11 @@ Em cenários reais, existem múltiplos clusters Kubernetes para ambientes difere
 
 ## Clusters deste exemplo
 
-| Cluster | API Port | HTTP Port | HTTPS Port | Agents |
-|---|---|---|---|---|
-| `desenvolvimento` | `6443` | `8000` | `8443` | 1 |
-| `homologacao` | `6444` | `8100` | `8143` | 1 |
-| `producao` | `6445` | `8200` | `8243` | 2 |
+| Cluster | API Port | HTTP | HTTPS | App Ports (host→container) | NodePort |
+|---|---|---|---|---|---|
+| `desenvolvimento` | `6443` | `8000→80` | `8443→443` | `3000-3002→3000-3002`, `8001-8002→8001-8002` | `30000→30000` |
+| `homologacao` | `6444` | `8100→80` | `8143→443` | `3100-3102→3000-3002`, `8101-8102→8001-8002` | `30100→30000` |
+| `producao` | `6445` | `8200→80` | `8243→443` | `3200-3202→3000-3002`, `8201-8202→8001-8002` | `30200→30000` |
 
 > Cada cluster usa portas distintas no host para não colidir.
 
