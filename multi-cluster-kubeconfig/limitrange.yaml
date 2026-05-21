@@ -1,0 +1,65 @@
+# LimitRange — dev
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: limitrange-dev
+  namespace: dev
+spec:
+  limits:
+  - type: Container
+    default:          # limite aplicado se o container não declarar
+      cpu: "250m"
+      memory: "256Mi"
+    defaultRequest:   # request aplicado se o container não declarar
+      cpu: "100m"
+      memory: "128Mi"
+    max:              # teto máximo permitido
+      cpu: "500m"
+      memory: "512Mi"
+    min:              # mínimo obrigatório
+      cpu: "50m"
+      memory: "64Mi"
+---
+# LimitRange — homologacao (hk)
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: limitrange-hk
+  namespace: hk
+spec:
+  limits:
+  - type: Container
+    default:
+      cpu: "500m"
+      memory: "512Mi"
+    defaultRequest:
+      cpu: "250m"
+      memory: "256Mi"
+    max:
+      cpu: "1000m"
+      memory: "1Gi"
+    min:
+      cpu: "100m"
+      memory: "128Mi"
+---
+# LimitRange — producao (prod)
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: limitrange-prod
+  namespace: prod
+spec:
+  limits:
+  - type: Container
+    default:
+      cpu: "1000m"
+      memory: "1Gi"
+    defaultRequest:
+      cpu: "500m"
+      memory: "512Mi"
+    max:
+      cpu: "2000m"
+      memory: "2Gi"
+    min:
+      cpu: "100m"
+      memory: "128Mi"
