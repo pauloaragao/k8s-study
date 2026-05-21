@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-volumeestatico
+spec:
+  containers:
+  - name: nginx
+    image: nginx:latest
+    volumeMounts:
+    - name: volume-estatico
+      mountPath: /usr/share/nginx/html
+  
+  volumes:
+  - name: volume-estatico
+    nfs:
+      server: nfs-server.example.com
+      path: /path/to/nfs/share
+      readOnly: true
