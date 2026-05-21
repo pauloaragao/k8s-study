@@ -2,8 +2,8 @@ apiVersion: k3d.io/v1alpha5
 kind: Simple
 metadata:
   name: desenvolvimento
-servers: 1
-agents: 1
+servers: 3
+agents: 3
 kubeAPI:
   hostIP: "0.0.0.0"
   hostPort: "6443"
@@ -29,13 +29,16 @@ ports:
   - port: 8002:8002
     nodeFilters:
       - loadbalancer
+  - port: 5432:5432
+    nodeFilters:
+      - loadbalancer
   - port: 30000:30000
     nodeFilters:
       - agent:*
 options:
   k3d:
     wait: true
-    timeout: "60s"
+    timeout: "120s"
   k3s:
     extraArgs:
       - arg: "--disable=traefik"

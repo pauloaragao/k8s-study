@@ -23,3 +23,15 @@ spec:
           value: "Pg#123"
         - name: POSTGRES_DB
           value: "kubenews"
+        - name: PGDATA
+          value: "/var/lib/postgresql/data/pgdata"
+        volumeMounts:
+        - name: postgresql-data
+          mountPath: "/var/lib/postgresql/data"
+          subPath: "pgdata"
+
+      volumes:
+        - name: postgresql-data
+          persistentVolumeClaim:
+            claimName: postgresql-pvc
+
