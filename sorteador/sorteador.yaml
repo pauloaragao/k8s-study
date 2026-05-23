@@ -4,6 +4,9 @@ metadata:
   name: sorteador
 spec:
   ttlSecondsAfterFinished: 60
+  completions: 2
+  parallelism: 2
+  backoffLimit: 6
   template:
     metadata:
       labels:
