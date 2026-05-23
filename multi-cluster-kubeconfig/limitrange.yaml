@@ -19,6 +19,11 @@ spec:
     min:              # mínimo obrigatório
       cpu: "50m"
       memory: "64Mi"
+  - type: PersistentVolumeClaim
+    max:
+      storage: "2Gi"
+    min:
+      storage: "128Mi"
 ---
 # LimitRange — homologacao (hk)
 apiVersion: v1
@@ -41,6 +46,11 @@ spec:
     min:
       cpu: "100m"
       memory: "128Mi"
+  - type: PersistentVolumeClaim
+    max:
+      storage: "5Gi"
+    min:
+      storage: "128Mi"
 ---
 # LimitRange — producao (prod)
 apiVersion: v1
@@ -63,3 +73,8 @@ spec:
     min:
       cpu: "100m"
       memory: "128Mi"
+  - type: PersistentVolumeClaim
+    max:
+      storage: "10Gi"
+    min:
+      storage: "128Mi"
